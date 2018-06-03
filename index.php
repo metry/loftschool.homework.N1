@@ -84,7 +84,7 @@ $opel = array(
     'doors' => 5,
     'year' => '2008'
 );
-$cars = [ 'bmw' => $bmw, 'toyota' => $toyota, 'opel' => $opel ];
+$cars = ['bmw' => $bmw, 'toyota' => $toyota, 'opel' => $opel];
 
 foreach ($cars as $carName => $carProperties) {
     //inline css стили сделаны только для примера.
