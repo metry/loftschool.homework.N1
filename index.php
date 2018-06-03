@@ -107,9 +107,9 @@ for ($i=1; $i<=10; $i++) {
     echo '<tr>';
     for ($j=1; $j<=10; $j++) {
         echo '<td style="padding:20px;">';
-        if ($i%2==0 && $j%2==0) {
+        if ($i%2 == 0 && $j%2 == 0) {
             echo '(' . $i*$j . ')';
-        } elseif ($i%2==1 && $j%2==1) {
+        } elseif ($i%2 == 1 && $j%2 == 1) {
             echo '[' . $i*$j . ']';
         } else {
             echo $i*$j;
