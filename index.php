@@ -39,64 +39,32 @@ echo '<hr>';
 $day = 0;
 switch ($day) {
     case 1:
-        echo 'Это рабочий день';
-        break;
     case 2:
-        echo 'Это рабочий день';
-        break;
     case 3:
-        echo 'Это рабочий день';
-        break;
     case 4:
-        echo 'Это рабочий день';
-        break;
     case 5:
         echo 'Это рабочий день';
         break;
     case 6:
-        echo 'Это выходной день';
-        break;
     case 7:
         echo 'Это выходной день';
         break;
     default:
         echo 'Неизвестный день';
-        break;
 }
 
 //Задание #5
 echo '<hr>';
-$bmw = array(
-    'model' => 'X5',
-    'speed' => 120,
-    'doors' => 5,
-    'year' => '2015'
-);
-$toyota = array(
-    'model' => 'Camry',
-    'speed' => 100,
-    'doors' => 5,
-    'year' => '2011'
-);
-$opel = array(
-    'model' => 'Astra',
-    'speed' => 80,
-    'doors' => 5,
-    'year' => '2008'
-);
+$bmw = ['model' => 'X5', 'speed' => 120, 'doors' => 5, 'year' => '2015'];
+$toyota = ['model' => 'Camry', 'speed' => 100, 'doors' => 5, 'year' => '2011'];
+$opel = ['model' => 'Astra', 'speed' => 80, 'doors' => 5, 'year' => '2008'];
 $cars = ['bmw' => $bmw, 'toyota' => $toyota, 'opel' => $opel];
 
 foreach ($cars as $carName => $carProperties) {
     //inline css стили сделаны только для примера.
     echo '<div style="border:1px solid black;margin: 2px;">';
     echo 'CAR ' . $carName . '<br>';
-    foreach ($carProperties as $carProperty) {
-        if ($carProperty == end($carProperties)) {
-            echo $carProperty;
-        } else {
-            echo $carProperty . ' ';
-        }
-    }
+    echo implode(' ', $carProperties);
     echo '</div>';
 }
 
@@ -106,13 +74,14 @@ echo '<table border="1">';
 for ($i=1; $i<=10; $i++) {
     echo '<tr>';
     for ($j=1; $j<=10; $j++) {
+        $value = $i*$j;
         echo '<td style="padding:20px;">';
         if ($i%2 == 0 && $j%2 == 0) {
-            echo '(' . $i*$j . ')';
+            echo '(' . $value . ')';
         } elseif ($i%2 == 1 && $j%2 == 1) {
-            echo '[' . $i*$j . ']';
+            echo '[' . $value . ']';
         } else {
-            echo $i*$j;
+            echo $value;
         }
         echo '</td>';
     }
