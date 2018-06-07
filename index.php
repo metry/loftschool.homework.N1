@@ -22,13 +22,16 @@ echo 'Рисунков карандашами: ' . COUNT_PENCIL . '<br>';
 echo 'Рисунков красками: ' . COUNT_IMAGES . ' - ' . COUNT_MARKER . ' - ' . COUNT_PENCIL . ' = ' . COUNT_PAINT;
 
 //Задание #3
+const MIDDLE_AGE = 18;
+const MAX_AGE = 65;
+
 echo '<hr>';
 $age = 0;
-if ($age >= 1 && $age <= 17) {
+if ($age > 0 && $age < MIDDLE_AGE) {
     echo 'Вам ещё рано работать';
-} elseif ($age >= 18 && $age <= 65) {
+} elseif ($age >= MIDDLE_AGE && $age <= MAX_AGE) {
     echo 'Вам еще работать и работать';
-} elseif ($age > 65) {
+} elseif ($age > MAX_AGE) {
     echo 'Вам пора на пенсию';
 } else {
     echo 'Неизвестный возраст';
@@ -76,10 +79,12 @@ for ($i=1; $i<=10; $i++) {
     for ($j=1; $j<=10; $j++) {
         $value = $i*$j;
         echo '<td style="padding:20px;">';
-        if ($i%2 == 0 && $j%2 == 0) {
-            echo '(' . $value . ')';
-        } elseif ($i%2 == 1 && $j%2 == 1) {
-            echo '[' . $value . ']';
+        if (($i+$j)%2 == 0) {
+            if ($i % 2 == 0) {
+                echo '(' . $value . ')';
+            } else {
+                echo '[' . $value . ']';
+            }
         } else {
             echo $value;
         }
